@@ -2,8 +2,10 @@ import Control.Applicative
 
 {-
 A functor can be thought of as a box, or better yet as a value with a context.
-The fmap method of the Functor type class looks like this:
-fmap :: (a -> b) -> f a -> f b
+the Functor type class looks like this:
+class Functor f where              -- f is a type constructor that takes one type parameter
+    fmap :: (a -> b) -> f a -> f b
+
 fmap can be thought of in two ways:
 1. it maps the function (a -> b) over the functor value a
 2. it lifts the function (a -> b) into the functor f
@@ -51,7 +53,7 @@ instance Functor CMaybe where
 
 -- Here is the type class for the Applicative Functor:
 {-
-class (Functor f) => Applicative f where
+class (Functor f) => Applicative f where -- f is a type constructor that takes one type parameter
     pure :: a -> f a
     (<*>) :: f (a -> b) -> f a -> f b
 -}
