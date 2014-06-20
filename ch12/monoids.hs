@@ -59,7 +59,7 @@ exp4 = getSum $ Sum 2 `mappend` Sum 3
 exp5 = getSum . mconcat . map Sum $ [2,3,4]
 -- Bool can be an instance of Monoid with logical OR behaviour with the Any type:
 exp6 = getAny . mconcat . map Any $ [False,True] -- normally you'd use the or function for this
--- and logical ANY with All:
+-- and logical AND with All:
 exp7 = getAll . mconcat . map All $ [False,True] -- mornally you'd use the and function for this
 
 -- the Ordering instance of Monoid looks like this:

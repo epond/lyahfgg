@@ -70,8 +70,8 @@ instance Applicative Maybe where
 exp1 = pure (+) <*> Just 3 <*> Just 5
 exp2 = (pure (+) <*> Just 3) <*> Just 5
 
--- given a function f that expects parameters x, y, ... that aren’t applicative values,
--- we can apply the function in the applicative style as follows:
+-- given a function f that expects parameters that aren’t applicative values,
+-- we can apply the function in the applicative style to applicative values x, y, ... as follows:
 -- pure f <*> x <*> y <*> ...
 
 -- but pure f <*> x is equivalent to fmap f x so we could have said:
