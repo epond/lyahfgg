@@ -2,7 +2,9 @@
 --                      fmap :: (Functor f) => (a -> b) -> f a -> f b
 -- applicative functor: preserved context over multiple normal function application
 --                      (<*>) :: (Applicative f) => f (a -> b) -> f a -> f b
--- monad:               like applicative but function returns a value with a context
+-- monoid:              an associative binary function and in identity value
+-- monad:               like applicative but function returns a value with a context.
+--                      a monadic value acts like a value with an attached monoid
 -- we want 'bind':      (>>=) :: (Monad m) => m a -> (a -> m b) -> m b
 
 -- here is the Monad typeclass:
