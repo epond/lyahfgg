@@ -59,7 +59,7 @@ exp1 = runWriter (return 3 :: Writer String Int)        -- (3,"")
 exp2 = runWriter (return 3 :: Writer (Sum Int) Int)     -- (3,Sum {getSum = 0})
 exp3 = runWriter (return 3 :: Writer (Product Int) Int) -- (3,Product {getProduct = 1})
 
--- we can use do notation with Writer to multiply two numbers. note how the writer funtion is used
+-- we can use do notation with Writer to multiply two numbers. note how the writer function is used
 -- instead of the Writer value constructor to allow for future changes to the Writer implementation.
 logNumber :: Int -> Writer [String] Int
 logNumber x = writer (x, ["Got number: " ++ show x])
