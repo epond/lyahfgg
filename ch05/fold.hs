@@ -1,5 +1,5 @@
 -- a left fold takes values from the head (left) of the list, and the binary function's left parameter is the accumulator
--- foldl :: (a -> b -> a) -> a -> [b] -> a
+-- foldl :: (b -> a -> b) -> b -> [a] -> b
 suml xs = foldl (\acc x -> acc + x) 0 xs
 -- a right fold takes values from the end (right) of the list, and the binary function's right parameter is the accumulator
 -- foldr :: (a -> b -> b) -> b -> [a] -> b
